@@ -25,6 +25,9 @@ jobs:
       - name: Ambil Dependencies
         run: flutter pub get
 
+      - name: Buat Kamus Bahasa (Localization)
+        run: flutter gen-l10n
+
       - name: Build APK Android
         run: flutter build apk --release
 
