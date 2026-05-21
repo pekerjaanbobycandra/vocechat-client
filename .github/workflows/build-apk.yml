@@ -20,7 +20,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable' # Menggunakan Flutter versi stabil terbaru
+          flutter-version: '3.13.9' # Mengunci ke versi stabil yang mendukung struktur Gradle lama
 
       - name: Ambil Dependencies (Bahan-bahan aplikasi)
         run: flutter pub get
