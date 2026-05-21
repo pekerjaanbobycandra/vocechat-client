@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "526613312184",
-    "project_id": "vocechatdev",
-    "storage_bucket": "vocechatdev.appspot.com"
+    "project_number": "768607795338",
+    "project_id": "chat-desa-cluring",
+    "storage_bucket": "chat-desa-cluring.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:526613312184:android:4ec9dc2559a6a11c487a4d",
+        "mobilesdk_app_id": "1:768607795338:android:4758563ab9b0730eab5573",
         "android_client_info": {
-          "package_name": "com.privoce.vocechatclient"
+          "package_name": "com.desacluring.chat"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "526613312184-412l4v5p2hk09cd0lsh4sma52jr0a2q5.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAQwY4WDqoAxmP9wOX1vjHySpEkwMPR1N0"
+          "current_key": "AIzaSyDwaldrIaBFbINNoOq9zb5HtmwmbnpiHJQ"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "526613312184-412l4v5p2hk09cd0lsh4sma52jr0a2q5.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "526613312184-311lgn5nsdu2t3enh68j2nuv19b7mm1a.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.privoce.vocechatclient"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

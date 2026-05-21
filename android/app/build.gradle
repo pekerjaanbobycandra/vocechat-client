@@ -55,7 +55,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.privoce.vocechatclient"
+        applicationId "com.desacluring.chat"
         //minSdkVersion flutter.minSdkVersion
         multiDexEnabled true
         // manifestPlaceholders += [pdftronLicenseKey:PDFTRON_LICENSE_KEY]

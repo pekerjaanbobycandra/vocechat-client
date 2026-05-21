@@ -1,0 +1,35 @@
+name: Build APK Desa Cluring
+
+on:
+  workflow_dispatch: # Baris ini memunculkan tombol "Run workflow" agar bisa diklik manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Kita meminjam komputer server Linux milik GitHub
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java (Dibutuhkan untuk compile Android)
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17' # Java 17 sangat stabil untuk target SDK 34
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # Menggunakan Flutter versi stabil terbaru
+
+      - name: Ambil Dependencies (Bahan-bahan aplikasi)
+        run: flutter pub get
+
+      - name: Build APK Android
+        run: flutter build apk --release
+
+      - name: Simpan Hasil APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Aplikasi-Desa-Cluring
+          path: build/app/outputs/flutter-apk/app-release.apk
