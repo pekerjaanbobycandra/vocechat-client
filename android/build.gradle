@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.8.21' // <-- Kita kembalikan baris ini
+    ext.kotlin_version = '1.8.21'
     repositories {
         google()
         mavenCentral()
@@ -21,9 +21,16 @@ allprojects {
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
+    
+    // --- TAMBAHKAN BLOK INI: Memaksa semua plugin menggunakan Kotlin 1.8 ---
+    project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "1.8"
+            languageVersion = "1.8"
+        }
+    }
+    // ------------------------------------------------------------------------
 }
 
 tasks.register("clean", Delete) {
