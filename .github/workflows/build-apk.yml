@@ -1,11 +1,11 @@
 name: Build APK Desa Cluring
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -15,14 +15,14 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '17' 
+          java-version: '17'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.9' # <-- Menggunakan versi jalan tengah (Dart 3.2.3)
+          channel: 'stable' # Kembali ke versi terbaru agar Dart tidak error
 
-      - name: Ambil Dependencies 
+      - name: Ambil Dependencies
         run: flutter pub get
 
       - name: Build APK Android
