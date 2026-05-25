@@ -25,14 +25,17 @@ jobs:
       - name: Bersihkan Sisa Build Sebelumnya
         run: flutter clean
 
-      - name: Ambil Dependencies
+      - name: Ambil Dependencies (Tahap 1)
         run: flutter pub get
 
-      - name: Buat File Auto-Generate Tambahan (Build Runner)
+      - name: Buat File Auto-Generate (Build Runner)
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Buat Kamus Bahasa (Localization)
         run: flutter gen-l10n
+
+      - name: Segarkan Memori Tautan (KUNCI SOLUSI)
+        run: flutter pub get
 
       - name: Build APK Android
         run: flutter build apk --release
