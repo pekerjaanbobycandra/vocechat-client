@@ -22,11 +22,17 @@ jobs:
         with:
           channel: 'stable' # Kembali ke versi terbaru agar Dart tidak error
 
+      - name: Bersihkan Sisa Build Sebelumnya (Penting)
+        run: flutter clean
+
       - name: Ambil Dependencies
         run: flutter pub get
 
       - name: Buat Kamus Bahasa (Localization)
         run: flutter gen-l10n
+
+      - name: Buat File Auto-Generate Tambahan (Build Runner)
+        run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Build APK Android
         run: flutter build apk --release
