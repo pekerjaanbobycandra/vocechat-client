@@ -17,25 +17,20 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Flutter
+      - name: Setup Flutter (Kunci ke Generasi Dart 2)
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.7.12'
           channel: 'stable'
 
-      - name: Bersihkan Sisa Build Sebelumnya
-        run: flutter clean
-
-      - name: Ambil Dependencies (Tahap 1)
+      - name: Ambil Dependencies
         run: flutter pub get
-
-      - name: Buat File Auto-Generate (Build Runner)
-        run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Buat Kamus Bahasa (Localization)
         run: flutter gen-l10n
 
-      - name: Segarkan Memori Tautan (KUNCI SOLUSI)
-        run: flutter pub get
+      - name: Buat File Auto-Generate (Build Runner)
+        run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Build APK Android
         run: flutter build apk --release
